@@ -34,7 +34,7 @@ const P = [];
   P.push(icon("corner-marks", CAT, ["crop marks", "frame guides", "target frame"],
     path("M6 3.4H4.2A.8.8 0 0 0 3.4 4.2V6", A.draw()) + path("M18 3.4h1.8a.8.8 0 0 1 .8.8V6", A.draw(0.05)) +
     path("M20.6 18v1.8a.8.8 0 0 1-.8.8H18", A.draw(0.1)) + path("M6 20.6H4.2a.8.8 0 0 1-.8-.8V18", A.draw(0.15)) +
-    circle(12, 12, 1.4, A.pop(0.2))));
+    circle(12, 12, 1.85, A.pop(0.2))));
   P.push(icon("hash", CAT, ["pound", "tag number", "channel"],
     line(9.4, 3.6,7.4, 20.4, A.draw()) + line(16.6, 3.6, 14.6, 20.4, A.draw(0.06)) +
     line(4.4, 8.6, 19.6, 8.6, A.draw(0.12)) + line(4.4, 15.4, 19.6, 15.4, A.draw(0.16))));
@@ -66,7 +66,7 @@ const P = [];
     line(7, 8.4, 7, 12, A.draw(0.1)) + line(10.6, 8.4, 10.6, 13.2, A.draw(0.12)) + line(14.2, 8.4, 14.2, 12, A.draw(0.14)) + line(17.8, 8.4, 17.8, 13.2, A.draw(0.16))));
   P.push(icon("slice", CAT, ["cut line", "export", "divide art"],
     path("M20.2 4.2 4.6 12.2", A.draw()) + path("M20.2 19.8 4.6 11.8", A.draw(0.06)) +
-    circle(17.6, 6, 1.2, A.pop(0.14)) + circle(17.6, 18, 1.2, A.pop(0.18))));
+    circle(17.6, 6, 1.8, A.pop(0.14)) + circle(17.6, 18, 1.8, A.pop(0.18))));
   P.push(icon("layers-2", CAT, ["stack design", "sheets", "z-order"],
     path("M12 3.4 3.2 8 12 12.6 20.8 8Z", A.draw()) + path("M3.2 12.6 12 17.2l8.8-4.6", A.draw(0.1)) +
     path("M3.2 16.8 12 21.4l8.8-4.6", A.draw(0.16))));
@@ -114,7 +114,7 @@ const P = [];
   P.push(icon("flask", CAT, ["chemistry", "experiment", "beaker"],
     path("M9.4 3.6v6L4.6 18a1.8 1.8 0 0 0 1.6 2.8h11.6a1.8 1.8 0 0 0 1.6-2.8l-4.8-8.4v-6", A.draw()) +
     line(8.2, 3.6, 15.8, 3.6, A.draw(0.1)) + line(6.8, 14, 17.2, 14, A.draw(0.14)) +
-    circle(10, 16.6, 1, A.pop(0.18)) + circle(14, 17.2, 1, A.pop(0.2))));
+    circle(10, 16.6, 1.85, A.pop(0.18)) + circle(14, 17.2, 1.85, A.pop(0.2))));
   P.push(icon("atom", CAT, ["physics", "science", "nucleus"],
     circle(12, 12, 1.8, A.pop()) + ellipse(12, 12, 9.4, 3.6, A.draw(0.08)) +
     rot(ellipse(12, 12, 9.4, 3.6, A.draw(0.12)), 60) + rot(ellipse(12, 12, 9.4, 3.6, A.draw(0.16)), 120)));
@@ -222,7 +222,7 @@ const P = [];
     path("M10.8 15.2 12 16.8l1.2-1.6", A.pop(0.12)) + path("M12 16.8c-.8 1.4.8 2.2 0 3.6", A.draw(0.16))));
   P.push(icon("confetti", CAT, ["celebration", "party pop", "yay"],
     path("M4 20.4 12.4 12", A.draw()) + path("M12.4 12l2-5 2.4 2.2 3.4-3.4", A.draw(0.08)) +
-    circle(19.4, 4.4, 1, A.pop(0.12)) + rect(15.2, 3, 1.8, 1.8, 0.4, A.pop(0.15)) +
+    circle(19.4, 4.4, 1.85, A.pop(0.12)) + rect(15.2, 3, 3, 3, 0.8, A.pop(0.15)) +
     cross(20, 9.2, 1, A.pop(0.18)) + cross(16.8, 7.6, 0.9, A.pop(0.2)) +
     path("M6.4 16.6a2.4 2.4 0 0 0 2.4 2.4", A.draw(0.22))));
   P.push(icon("music-box", CAT, ["jukebox", "fun tunes", "party music"],
@@ -233,8 +233,8 @@ const P = [];
 /* ================= symbols & logic ================= */
 {
   const CAT = "symbols";
-  P.push(icon("question", CAT, ["ask", "unknown", "help mark"], path("M8.2 8.6a3.9 3.9 0 0 1 7.6 1c0 2.5-3.6 3.1-3.6 5.7", A.draw()) + circle(12, 18, 1, A.pop(0.12))));
-  P.push(icon("exclamation", CAT, ["important mark", "alert mark", "bang"], line(12, 4.6, 12, 13.4, A.draw()) + circle(12, 17.8, 1, A.pop(0.12))));
+  P.push(icon("question", CAT, ["ask", "unknown", "help mark"], path("M8.2 8.6a3.9 3.9 0 0 1 7.6 1c0 2.5-3.6 3.1-3.6 5.7", A.draw()) + circle(12, 18, 1.85, A.pop(0.12))));
+  P.push(icon("exclamation", CAT, ["important mark", "alert mark", "bang"], rect(10.7, 4.6, 2.6, 8.8, 1.3, A.draw()) + circle(12, 17.8, 1.6, A.pop(0.12))));
   P.push(icon("at", CAT, ["mention mark", "email mark", "handle"], circle(12, 12, 3.4, A.draw()) + path("M15.4 12v1.4a2.6 2.6 0 0 0 5 1A8.6 8.6 0 1 0 17 19.4", A.draw(0.1))));
   P.push(icon("ampersand", CAT, ["and", "join", "link mark"], path("M15.2 9.2a3.4 3.4 0 1 0-5.8 2.4L15.6 18a3.4 3.4 0 1 0 2.8-5.4c-1.8.2-3.6-.4-5.2-1.6", A.draw())));
   P.push(icon("paragraph", CAT, ["text block", "pilcrow", "writing"], path("M13.4 4.2h3.2M13.4 4.2v15.6M13.4 4.2c-3.6 0-6.4 2.8-6.4 6.2s2.8 6.2 6.4 6.2", A.draw()) + line(6.6, 19.8, 18, 19.8, A.draw(0.12))));

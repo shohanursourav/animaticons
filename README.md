@@ -18,8 +18,8 @@ Plus: command palette (`⌘K` / `Ctrl+K`), copy toasts, reduced-motion support, 
 ## The icon set
 
 - **1,026 icons** generated from original geometry (no copied artwork): 513 designs in two render styles
-  - **Aura** — crisp outline style
-  - **Ember** — same motion, soft tinted fills
+  - **Aura** — crisp outline style, no fill
+  - **Ember** — the same design with tinted fills baked into its closed shapes (every pair differs)
 - **33 categories** — from "On the Move" and "Panels & Controls" to "Sky & Weather", "Bites & Sips" and "Play & Party"
 - Motion vocabulary of ~10 animation types (`pop`, `draw`, `swing`, `spin`, `drop`, `pulse`…) applied per element and triggered on hover
 - Regenerate the dataset any time with:

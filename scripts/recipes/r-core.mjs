@@ -157,9 +157,9 @@ P.push(icon("share", CAT, ["send to", "network", "spread"],
 {
   const CAT = "interface";
   P.push(icon("menu", CAT, ["hamburger", "nav", "list"], line(4, 6.5, 20, 6.5, A.draw()) + line(4, 12, 20, 12, A.draw(0.06)) + line(4, 17.5, 20, 17.5, A.draw(0.12))));
-  P.push(icon("more-vertical", CAT, ["kebab", "options", "dots"], circle(12, 5.8, 1.25, A.pop()) + circle(12, 12, 1.25, A.pop(0.08)) + circle(12, 18.2, 1.25, A.pop(0.16))));
-  P.push(icon("more-horizontal", CAT, ["ellipsis", "options", "dots"], circle(5.8, 12, 1.25, A.pop()) + circle(12, 12, 1.25, A.pop(0.08)) + circle(18.2, 12, 1.25, A.pop(0.16))));
-  P.push(icon("dots-grid", CAT, ["apps", "palette", "menu"], [6, 12, 18].map(y => [6, 12, 18].map(x => circle(x, y, 1.15, A.pop(0.02 * (x + y)))).join("")).join("")));
+  P.push(icon("more-vertical", CAT, ["kebab", "options", "dots"], circle(12, 5.8, 1.8, A.pop()) + circle(12, 12, 1.8, A.pop(0.08)) + circle(12, 18.2, 1.8, A.pop(0.16))));
+  P.push(icon("more-horizontal", CAT, ["ellipsis", "options", "dots"], circle(5.8, 12, 1.8, A.pop()) + circle(12, 12, 1.8, A.pop(0.08)) + circle(18.2, 12, 1.8, A.pop(0.16))));
+  P.push(icon("dots-grid", CAT, ["apps", "palette", "menu"], [6, 12, 18].map(y => [6, 12, 18].map(x => circle(x, y, 1.8, A.pop(0.02 * (x + y)))).join("")).join("")));
   P.push(icon("sidebar-left", CAT, ["panel", "layout", "drawer"], rect(3.5, 4.5, 17, 15, 2.5, A.draw()) + line(9.2, 4.5, 9.2, 19.5, A.draw(0.1))));
   P.push(icon("sidebar-right", CAT, ["panel", "layout", "drawer"], rect(3.5, 4.5, 17, 15, 2.5, A.draw()) + line(14.8, 4.5, 14.8, 19.5, A.draw(0.1))));
   P.push(icon("panel-top", CAT, ["header", "layout", "banner"], rect(3.5, 4.5, 17, 15, 2.5, A.draw()) + line(3.5, 9.8, 20.5, 9.8, A.draw(0.1))));
@@ -182,7 +182,7 @@ P.push(icon("share", CAT, ["send to", "network", "spread"],
   P.push(icon("toggle-right", CAT, ["switch on", "control", "on"],
     rect(2.8, 7.2, 18.4, 9.6, 4.8, A.draw()) + circle(16.6, 12, 2.5, A.pop(0.1))));
   P.push(icon("drag-handle", CAT, ["grip", "reorder", "handle"],
-    [8.5, 12, 15.5].map(y => [8.8, 15.2].map(x => circle(x, y, 1.2, A.pop(0.03 * y))).join("")).join("")));
+    [8.5, 12, 15.5].map(y => [8.8, 15.2].map(x => circle(x, y, 1.8, A.pop(0.03 * y))).join("")).join("")));
   P.push(icon("command", CAT, ["keyboard", "shortcut", "key"],
     rect(9, 9, 6, 6, 1, A.pop()) +
     path("M9 9a3 3 0 1 1 6 0", A.draw(0.06)) + path("M9 15a3 3 0 1 0 6 0", A.draw(0.1)) +
@@ -225,7 +225,7 @@ P.push(icon("share", CAT, ["send to", "network", "spread"],
   P.push(icon("minus", CAT, ["subtract", "remove", "decrease"], minus(12, 12, 7, A.draw())));
   P.push(icon("equals", CAT, ["balance", "same"], line(5.5, 9.5, 18.5, 9.5, A.draw()) + line(5.5, 14.5, 18.5, 14.5, A.draw(0.08))));
   P.push(icon("not-equal", CAT, ["different", "compare"], line(5.5, 9.5, 18.5, 9.5, A.draw()) + line(5.5, 14.5, 18.5, 14.5, A.draw(0.08)) + line(9, 5.5, 7, 18.5, A.draw(0.14))));
-  P.push(icon("divide", CAT, ["math", "split"], line(5.5, 12, 18.5, 12, A.draw()) + circle(12, 7.2, 1.3, A.pop(0.1)) + circle(12, 16.8, 1.3, A.pop(0.14))));
+  P.push(icon("divide", CAT, ["math", "split"], line(5.5, 12, 18.5, 12, A.draw()) + circle(12, 7.2, 1.85, A.pop(0.1)) + circle(12, 16.8, 1.85, A.pop(0.14))));
   P.push(icon("percent", CAT, ["ratio", "discount"], circle(7.6, 7.6, 2.3, A.pop()) + circle(16.4, 16.4, 2.3, A.pop(0.08)) + line(18, 6, 6, 18, A.draw(0.14))));
   P.push(icon("sigma", CAT, ["sum", "series", "total"], path("M17.5 6.2H7.2l5.4 5.8-5.4 5.8h10.3", A.draw())));
   P.push(icon("infinity", CAT, ["endless", "loop", "forever"], path("M8.2 8.2c2.3 0 3.4 3.8 5.6 3.8s3.3-3.8 5.6-3.8a3.8 3.8 0 0 1 0 7.6c-2.3 0-3.4-3.8-5.6-3.8S10.5 15.8 8.2 15.8a3.8 3.8 0 0 1 0-7.6Z", A.draw())));

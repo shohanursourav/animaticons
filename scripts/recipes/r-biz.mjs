@@ -74,7 +74,7 @@ const P = [];
     line(4, 20, 20, 20, A.draw()) + rect(5.6, 12, 3.2, 8, 1, A.pop(0.1)) + rect(10.4, 8, 3.2, 12, 1, A.pop(0.15)) + rect(15.2, 4.8, 3.2, 15.2, 1, A.pop(0.2))));
   P.push(icon("chart-line", "charts", ["trend line", "analytics", "report"],
     path("M3.4 20V4", A.draw()) + path("M3.4 20h17.2", A.draw(0.06)) +
-    polyline("6.2,16 10,11.6 13.2,13.6 18.4,6.6", A.draw(0.12)) + circle(18.4, 6.6, 1.3, A.pop(0.18))));
+    polyline("6.2,16 10,11.6 13.2,13.6 18.4,6.6", A.draw(0.12)) + circle(18.4, 6.6, 1.85, A.pop(0.18))));
   P.push(icon("chart-pie", "charts", ["share", "breakdown", "analytics"],
     arc(12, 12, 8.2, -90, 150, A.draw()) + line(12, 3.8, 12, 12, A.draw(0.1)) +
     path("M12 12l7 4.2", A.draw(0.14)) + arc(12, 12, 8.2, -90, 40, A.draw(0.18))));
@@ -128,7 +128,7 @@ const P = [];
     path("M3.8 6.2l12.6-2.6 1.2 5.6L5 11.8Z", A.draw()) + path("M5 11.8l-1.4 3.4 12.6-2.6 1.4-3.4", A.draw(0.1)) +
     path("M8 13.8 6.4 18.4", A.draw(0.16)) + circle(8.6, 5.4, 1, A.pop(0.2))));
   P.push(icon("door", CAT, ["entry", "exit", "room"],
-    path("M5.2 20.4V4.8a1.6 1.6 0 0 1 1.4-1.6l8-1.2a1.6 1.6 0 0 1 1.8 1.6v16.8", A.draw()) +
+    path("M5.2 20.4V4.8a1.6 1.6 0 0 1 1.4-1.6l8-1.2a1.6 1.6 0 0 1 1.8 1.6v16.8H5.2Z", A.draw()) +
     line(3.4, 20.4, 20.6, 20.4, A.draw(0.1)) + circle(13.4, 12, 0.9, A.pop(0.16))));
   P.push(icon("vault", CAT, ["safe box", "secure storage", "bank vault"],
     rect(2.8, 4.4, 18.4, 15.2, 2.2, A.draw()) + circle(12, 12, 4.6, A.draw(0.1)) +
@@ -165,7 +165,7 @@ const P = [];
     path("M15.6 4.6H18a1.6 1.6 0 0 1 1.6 1.6v11.6a1.6 1.6 0 0 1-1.6 1.6h-2.4", A.draw(0.1))));
   P.push(icon("binary-code", CAT, ["bits", "ones and zeros", "machine"],
     line(8, 5, 8, 19, A.draw()) + line(5.6, 5, 8, 5, A.draw(0.08)) + line(5.6, 19, 8, 19, A.draw(0.1)) +
-    circle(15.2, 6.4, 1.3, A.pop(0.14)) + circle(15.2, 12, 1.3, A.pop(0.17)) + circle(15.2, 17.6, 1.3, A.pop(0.2))));
+    circle(15.2, 6.4, 1.85, A.pop(0.14)) + circle(15.2, 12, 1.85, A.pop(0.17)) + circle(15.2, 17.6, 1.85, A.pop(0.2))));
   P.push(icon("rocket", CAT, ["launch", "deploy", "ship it"],
     path("M12 2.6c3 2.2 4.8 5.8 4.8 10.2l-2 3.6H9.2l-2-3.6C7.2 8.4 9 4.8 12 2.6Z", A.draw()) +
     circle(12, 10, 1.8, A.pop(0.12)) + path("M9.2 16.4l-2.6 2.2.8-4M14.8 16.4l2.6 2.2-.8-4", A.draw(0.16)) +
@@ -210,8 +210,8 @@ const P = [];
   P.push(icon("activity", CAT, ["monitor", "pulse", "vitals"],
     path("M2.8 12h3.8l2-6.2 3.4 12.8 2.6-9 1.8 4.2h4.8", A.draw())));
   P.push(icon("gauge", CAT, ["speed", "meter", "performance"],
-    arc(12, 14.4, 7.6, 150, 30, A.draw()) + line(12, 14.4, 16, 9.4, A.draw(0.12)) +
-    circle(12, 14.4, 1.3, A.pop(0.16))));
+    path("M4.4 14.4A7.6 7.6 0 0 1 19.6 14.4Z", A.draw()) + line(12, 14.4, 16, 9.4, A.draw(0.12)) +
+    circle(12, 14.4, 1.6, A.pop(0.16))));
   P.push(icon("timeline", CAT, ["history", "schedule line", "milestones"],
     line(4.4, 12, 19.6, 12, A.draw()) + circle(7, 12, 1.8, A.pop(0.08)) + circle(12, 12, 1.8, A.pop(0.12)) + circle(17, 12, 1.8, A.pop(0.16)) +
     line(7, 8.2, 7, 10.2, A.draw(0.18)) + line(12, 13.8, 12, 15.8, A.draw(0.2)) + line(17, 8.2, 17, 10.2, A.draw(0.22))));

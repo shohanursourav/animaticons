@@ -116,7 +116,7 @@ const P = [];
     path("M12 10c-3.2 0-5.6 2.4-5.6 5 0 2.2 1.8 3.4 3.8 3 1-.2 2.6-.2 3.6 0 2 .4 3.8-.8 3.8-3 0-2.6-2.4-5-5.6-5Z", A.pop(0.15))));
   P.push(icon("dog", CAT, ["pet", "puppy", "friend"],
     path("M5.6 7.2 5 3.8l3.2 2h7.6l3.2-2-.6 3.4", A.draw()) +
-    path("M5.6 7.2v5.2a6.4 6.4 0 0 0 12.8 0V7.2", A.draw(0.08)) +
+    path("M5.6 7.2v5.2a6.4 6.4 0 0 0 12.8 0V7.2Z", A.draw(0.08)) +
     circle(9.4, 11.6, 0.8, A.pop(0.14)) + circle(14.6, 11.6, 0.8, A.pop(0.17)) + path("M10.4 14.8a2 2 0 0 0 3.2 0", A.draw(0.2))));
   P.push(icon("cat", CAT, ["pet", "kitten", "meow"],
     path("M5 12.2c0-4 3-6.8 7-6.8s7 2.8 7 6.8-3 7.2-7 7.2-7-3.2-7-7.2Z", A.draw()) +
@@ -143,7 +143,7 @@ const P = [];
   P.push(icon("bone", CAT, ["dog treat", "pet care"],
     path("M7.2 14.8a2.6 2.6 0 1 1-2.2-4 2.6 2.6 0 1 1 4-2.2l7.6 7.6a2.6 2.6 0 1 1 2.2 4 2.6 2.6 0 1 1-4 2.2Z", A.draw())));
   P.push(icon("horse", CAT, ["ride", "equestrian", "stable"],
-    path("M6.4 19.6c0-5 1.4-8.2 4-10.2l-.8-3.4 3.2 1.8c2.8.2 4.8 1.6 6.4 4.2 1 1.8 1.2 4 .6 6", A.draw()) +
+    path("M6.4 19.6c0-5 1.4-8.2 4-10.2l-.8-3.4 3.2 1.8c2.8.2 4.8 1.6 6.4 4.2 1 1.8 1.2 4 .6 6Z", A.draw()) +
     path("M14.6 8l2.8-2.2.2 3.4", A.pop(0.12)) + circle(14.2, 9, 0.75, A.pop(0.16)) +
     path("M6.4 19.6h3.2l.8-4.4", A.draw(0.2))));
   P.push(icon("rabbit", CAT, ["bunny", "pet", "hop"],
@@ -187,7 +187,7 @@ const P = [];
     path("M4 15.4h16l-1.8 4.2H5.8Z", A.draw()) + line(12, 15.4, 12, 4.6, A.draw(0.1)) +
     path("M12 5.6c3.2.8 5.2 2.8 5.8 5.8H12", A.draw(0.14)) + path("M12 8.2 7.4 9.6l4.6 1.2", A.draw(0.18))));
   P.push(icon("fuel", CAT, ["gas station", "petrol", "charge up"],
-    path("M4.2 20.4V6.2a1.8 1.8 0 0 1 1.8-1.8h6.2a1.8 1.8 0 0 1 1.8 1.8v14.2", A.draw()) +
+    path("M4.2 20.4V6.2a1.8 1.8 0 0 1 1.8-1.8h6.2a1.8 1.8 0 0 1 1.8 1.8v14.2H4.2Z", A.draw()) +
     path("M3.4 20.4h11.6", A.draw(0.1)) + path("M6.8 8h4.6v3.4H6.8Z", A.pop(0.14)) +
     path("M14 10h2.8a1.6 1.6 0 0 1 1.6 1.6v4.2a1.6 1.6 0 0 0 1.6 1.6 1.6 1.6 0 0 0 1.6-1.6V9.2l-2.4-2.4", A.draw(0.18))));
   P.push(icon("suitcase", CAT, ["luggage", "travel", "trip"],

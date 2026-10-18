@@ -3,6 +3,8 @@
   "use strict";
 
   const D = () => window.ANIMATICONS;
+  /* Ember fill weight — keep in sync with .fi.pack-ember rule in css/base.css */
+  const EMBER_FILL = 0.25;
 
   /* ---------------- helpers ---------------- */
   const $ = (sel, root) => (root || document).querySelector(sel);
@@ -112,11 +114,25 @@
     opts = opts || {};
     const size = opts.size || 24;
     const color = opts.color || "currentColor";
+    const pack = opts.pack || "aura";
+    // clean runtime-only attributes from the export
+    let body = icon.svg
+      .replace(/\sdata-a="[^"]*"/g, "")
+      .replace(/\sdata-d="[^"]*"/g, "")
+      .replace(/\sstyle="animation-delay:[^"]*"/g, "");
+    if (pack === "ember") {
+      // Ember: same geometry, but closed shapes carry real fill
+      body = body.replace(/data-f="1"/g, 'fill="' + color + '" fill-opacity="' + EMBER_FILL + '"');
+    } else {
+      // Aura: pure outline, no fill anywhere
+      body = body.replace(/\sdata-f="1"/g, "");
+    }
+    body = body.replace(/></g, ">\n  ");
     return (
       '<svg xmlns="http://www.w3.org/2000/svg" width="' + size + '" height="' + size + '" viewBox="0 0 24 24"\n' +
       '  fill="none" stroke="' + color + '" stroke-width="2"\n' +
       '  stroke-linecap="round" stroke-linejoin="round">\n' +
-      "  " + icon.svg.replace(/></g, ">\n  ") + "\n</svg>"
+      "  " + body + "\n</svg>"
     );
   }
 

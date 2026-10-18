@@ -150,9 +150,9 @@ const P = [];
   P.push(icon("align-justify", CAT, ["text align", "paragraph"],
     line(4, 6.5, 20, 6.5, A.draw()) + line(4, 10.5, 20, 10.5, A.draw(0.06)) + line(4, 14.5, 20, 14.5, A.draw(0.1)) + line(4, 18.5, 20, 18.5, A.draw(0.14))));
   P.push(icon("list", CAT, ["bullet points", "items"],
-    circle(5, 7, 1.15, A.pop()) + line(8.6, 7, 20, 7, A.draw(0.06)) +
-    circle(5, 12, 1.15, A.pop(0.08)) + line(8.6, 12, 20, 12, A.draw(0.1)) +
-    circle(5, 17, 1.15, A.pop(0.16)) + line(8.6, 17, 20, 17, A.draw(0.14))));
+    circle(5, 7, 1.8, A.pop()) + line(8.6, 7, 20, 7, A.draw(0.06)) +
+    circle(5, 12, 1.8, A.pop(0.08)) + line(8.6, 12, 20, 12, A.draw(0.1)) +
+    circle(5, 17, 1.8, A.pop(0.16)) + line(8.6, 17, 20, 17, A.draw(0.14))));
   P.push(icon("list-ordered", CAT, ["numbered", "items"],
     line(9, 6, 20, 6, A.draw()) + line(9, 12, 20, 12, A.draw(0.06)) + line(9, 18, 20, 18, A.draw(0.1)) +
     path("M4,4.4 5.6,4v4", A.draw(0.12)) + path("M4,10.6h2l-2,2.6h2.2", A.draw(0.15)) + path("M4,16.2h1.8l-1.4,1.6a1.2 1.2 0 1 1-.8,2", A.draw(0.18))));
@@ -183,7 +183,7 @@ const P = [];
   P.push(icon("at-sign", CAT, ["mention", "email handle"],
     circle(12, 12, 3.6, A.draw()) + path("M15.6 12v1.6a2.8 2.8 0 0 0 5.2 1.2A9 9 0 1 0 17 19.2", A.draw(0.1))));
   P.push(icon("rss", CAT, ["feed", "subscribe", "broadcast"],
-    circle(5.6, 18.4, 1.35, A.pop()) + path("M4.2 11.2a8.6 8.6 0 0 1 8.6 8.6", A.draw(0.08)) + path("M4.2 5.4a14.4 14.4 0 0 1 14.4 14.4", A.draw(0.14))));
+    circle(5.6, 18.4, 1.8, A.pop()) + path("M4.2 11.2a8.6 8.6 0 0 1 8.6 8.6", A.draw(0.08)) + path("M4.2 5.4a14.4 14.4 0 0 1 14.4 14.4", A.draw(0.14))));
   P.push(icon("mailbox", CAT, ["post box", "letters"],
     path("M4 12.5a6 6 0 0 1 6-6h8.6a1.8 1.8 0 0 1 1.8 1.8v8.4a1.8 1.8 0 0 1-1.8 1.8H6a2 2 0 0 1-2-2Z", A.draw()) +
     path("M10 6.5v12", A.draw(0.1)) + line(13.4, 10, 18, 10, A.draw(0.14)) + path("M10 12.5H5.6a2 2 0 0 0 0 4H8", A.draw(0.18))));

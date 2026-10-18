@@ -73,6 +73,26 @@ export const CATEGORIES = [
 ];
 
 // ---- validate & assemble -------------------------------------------------
+/**
+ * Close paths that are geometrically closed (last point == first point)
+ * but omit the trailing Z. Stroke output is identical; with Z the shape
+ * becomes fillable for the Ember pack.
+ */
+function autoClosePaths(svg) {
+  return svg.replace(/<path\b([^>]*?)\/>/g, (m, attrs) => {
+    const d = (attrs.match(/\bd="([^"]*)"/) || [])[1];
+    if (!d || /[Zz]\s*$/.test(d.trim())) return m;
+    const nums = d.match(/-?\d*\.?\d+/g) || [];
+    if (nums.length < 4) return m;
+    const x0 = parseFloat(nums[0]), y0 = parseFloat(nums[1]);
+    const x1 = parseFloat(nums[nums.length - 2]), y1 = parseFloat(nums[nums.length - 1]);
+    if (Math.abs(x0 - x1) < 0.05 && Math.abs(y0 - y1) < 0.05) {
+      return m.replace(/\sd="([^"]*)"/, (mm, dd) => ' d="' + dd.trim() + ' Z"');
+    }
+    return m;
+  });
+}
+
 /** Mark closed shapes so the Ember pack can tint them. */
 function markFillable(svg) {
   return svg
@@ -86,8 +106,48 @@ function markFillable(svg) {
     });
 }
 
+/**
+ * Largest fillable shape's linear size (px in the 24×24 box). An icon whose
+ * only fills are tiny dots would look identical in Aura and Ember, so we
+ * require at least one meaningful filled shape.
+ */
+function fillWeight(svg) {
+  let best = 0;
+  const num = (s, re, dflt) => {
+    const m = s.match(re);
+    return m ? parseFloat(m[1]) : dflt;
+  };
+  for (const m of svg.matchAll(/<(circle|ellipse|rect|polygon|path)\b([^>]*?)\/>/g)) {
+    const tag = m[1], attrs = m[2];
+    if (!/data-f="1"/.test(attrs)) continue;
+    let w = 0, h = 0;
+    if (tag === "circle") {
+      const r = num(attrs, /\br="([^"]*)"/, 0);
+      w = h = 2 * r;
+    } else if (tag === "ellipse") {
+      w = 2 * num(attrs, /\brx="([^"]*)"/, 0);
+      h = 2 * num(attrs, /\bry="([^"]*)"/, 0);
+    } else if (tag === "rect") {
+      w = num(attrs, /\bwidth="([^"]*)"/, 0);
+      h = num(attrs, /\bheight="([^"]*)"/, 0);
+    } else {
+      const pts = (tag === "polygon" ? (attrs.match(/points="([^"]*)"/) || [])[1] : (attrs.match(/\bd="([^"]*)"/) || [])[1]) || "";
+      const nums = (pts.match(/-?\d*\.?\d+/g) || []).map(Number);
+      const xs = [], ys = [];
+      for (let i = 0; i + 1 < nums.length; i += 2) { xs.push(nums[i]); ys.push(nums[i + 1]); }
+      if (!xs.length) continue;
+      w = Math.max(...xs) - Math.min(...xs);
+      h = Math.max(...ys) - Math.min(...ys);
+    }
+    best = Math.max(best, Math.sqrt(Math.max(w, 0) * Math.max(h, 0)));
+  }
+  return best;
+}
+const MIN_FILL = 3.2; // ≈ 10px² — a shape this size or larger reads as "filled"
+
 const seen = new Set();
 const icons = [];
+const tinyFill = [];
 for (const r of RECIPES) {
   if (!r || !r.id || !r.svg) {
     console.error("Bad recipe:", r && r.id);
@@ -103,7 +163,16 @@ for (const r of RECIPES) {
     console.error("Unknown category:", r.cat, "for", r.id);
     process.exit(1);
   }
-  icons.push({ id: r.id, cat: r.cat, kw: r.kw || [], svg: markFillable(r.svg) });
+  const svg = markFillable(autoClosePaths(r.svg));
+  const fw = fillWeight(svg);
+  if (fw < MIN_FILL) {
+    tinyFill.push(r.id + "(" + fw.toFixed(1) + "px)");
+  }
+  icons.push({ id: r.id, cat: r.cat, kw: r.kw || [], svg });
+}
+if (tinyFill.length) {
+  console.error("Tiny-only fill — these would look identical in both packs:\n  " + tinyFill.join(", "));
+  process.exit(1);
 }
 
 // Category counts

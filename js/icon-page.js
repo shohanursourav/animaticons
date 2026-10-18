@@ -123,11 +123,11 @@
     const dlBtn = document.getElementById("dDownload");
     if (dlBtn) {
       dlBtn.addEventListener("click", () => {
-        const svg = F.svgSource(icon, { size: state.size, color: state.color });
+        const svg = F.svgSource(icon, { size: state.size, color: state.color, pack });
         const blob = new Blob([svg], { type: "image/svg+xml" });
         const a = document.createElement("a");
         a.href = URL.createObjectURL(blob);
-        a.download = "animaticons-" + icon.id + ".svg";
+        a.download = "animaticons-" + pack + "-" + icon.id + ".svg";
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);

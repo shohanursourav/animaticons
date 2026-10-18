@@ -212,10 +212,10 @@ code, pre, kbd { font-family: "SF Mono", "Cascadia Code", "JetBrains Mono", Cons
 .fi.play > svg [data-a="sweep"] { animation-name: f-sweep; --fd: 0.7s; }
 .fi.play > svg [data-a="draw"] { animation-name: f-draw; --fd: 0.9s; animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
 
-/* Ember pack: soft tinted fills */
+/* Ember pack: tinted fills — Aura stays pure outline */
 .fi.pack-ember svg [data-f="1"] {
   fill: currentColor;
-  fill-opacity: 0.16;
+  fill-opacity: 0.25;
 }
 
 @media (prefers-reduced-motion: reduce) {
