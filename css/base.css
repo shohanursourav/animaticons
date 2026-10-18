@@ -356,6 +356,25 @@ kbd {
 }
 .icon-btn:hover { background: var(--primary-tint); color: var(--primary-700); }
 .icon-btn:focus-visible { outline: none; box-shadow: var(--ring); }
+
+/* GitHub link with live star count */
+.gh-btn {
+  display: inline-flex; width: auto; height: 40px;
+  padding: 0 12px 0 11px; gap: 8px;
+  border: 1px solid var(--line);
+}
+.gh-mark { display: block; flex: none; }
+.gh-stars {
+  display: inline-flex; align-items: center; gap: 4px;
+  font-family: var(--font-text); font-size: 12px; font-weight: 750; line-height: 1;
+  color: var(--ink-2); background: var(--surface);
+  border: 1px solid var(--line); border-radius: var(--r-pill);
+  padding: 4px 8px 4px 7px;
+}
+.gh-stars[hidden] { display: none; }
+.gh-star { display: block; color: var(--primary-700); }
+.gh-btn:hover .gh-stars { color: var(--ink); border-color: var(--line-2); }
+
 .menu-btn { display: none; }
 
 /* announcement strip */

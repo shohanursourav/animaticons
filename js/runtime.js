@@ -373,6 +373,37 @@
     }
   });
 
+  /* ---------------- GitHub star badge ----------------
+     Shows live stargazer count for the repo; degrades to a plain
+     link when offline or rate-limited. */
+  function wireGithubStars() {
+    const nodes = $$("[data-gh-stars]");
+    if (!nodes.length || !window.fetch) return;
+    const apply = (label) =>
+      nodes.forEach((el) => {
+        const c = el.querySelector(".gh-count");
+        if (c) c.textContent = label;
+        el.hidden = false;
+      });
+    try {
+      const cached = sessionStorage.getItem("gh-stars");
+      const at = Number(sessionStorage.getItem("gh-stars-at") || 0);
+      if (cached && Date.now() - at < 3600e3) { apply(cached); return; }
+    } catch (_) {}
+    fetch("https://api.github.com/repos/shohanursourav/animaticons")
+      .then((r) => (r.ok ? r.json() : Promise.reject(new Error("status " + r.status))))
+      .then((j) => {
+        const n = Number(j.stargazers_count) || 0;
+        const label = n >= 1000 ? (n / 1000).toFixed(1).replace(/\.0$/, "") + "k" : String(n);
+        try {
+          sessionStorage.setItem("gh-stars", label);
+          sessionStorage.setItem("gh-stars-at", String(Date.now()));
+        } catch (_) {}
+        apply(label);
+      })
+      .catch(() => {});
+  }
+
   /* ---------------- hover / focus playback ----------------
      CSS :hover cannot reliably replay: a container (e.g. the icon grid)
      stays :hover while the pointer moves between its icons, so animations
@@ -462,6 +493,7 @@
     wireHoverPlayback();
     wireCopyButtons();
     wireIconSlots();
+    wireGithubStars();
     $$("[data-open-palette]").forEach((btn) => {
       btn.addEventListener("click", () => openPalette());
     });

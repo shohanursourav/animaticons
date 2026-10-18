@@ -109,8 +109,8 @@
   padding: 17px 20px; font-weight: 720; font-size: 15.5px; text-align: left;
   cursor: pointer;
 }
-.faq-q .fi { --size: 18px; color: var(--muted); transition: transform 0.2s; }
-.faq-item.open .faq-q .fi { transform: rotate(45deg); color: var(--primary-700); }
+.faq-q .fi, .faq-q .faq-glyph { --size: 18px; color: var(--muted); transition: transform 0.2s, color 0.2s; }
+.faq-item.open .faq-q .fi, .faq-item.open .faq-q .faq-glyph { transform: rotate(45deg); color: var(--primary-700); }
 .faq-a {
   display: none; padding: 0 20px 18px;
   color: var(--ink-2); font-size: 14.5px;
