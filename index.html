@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Animaticons — 1,026 Free Animated Icons That Move</title>
+  <meta name="description" content="Animaticons is a free collection of 1,026 animated icons in two packs — Aura and Ember. Hover them, tune size, speed and color, then copy the code for React, Vue or plain HTML." />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/home.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="announce">
+    <div class="wrap">
+      <span class="tag">New</span>
+      <span>The Ember tint pack just landed — same motion, warmer glow.</span>
+      <a href="gallery.html?pack=ember">See the glow →</a>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html" aria-label="Animaticons home">
+        <span class="brand-mark"><span data-icon="sparkle" data-size="19" data-label=""></span></span>
+        Animaticons
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html" class="is-active">Home</a>
+        <a href="gallery.html">Icons</a>
+        <a href="docs.html">Docs</a>
+      </nav>
+      <div class="header-actions">
+        <button class="search-trigger" data-open-palette type="button" aria-label="Search icons">
+          <span data-icon="search" data-size="16"></span>
+          Search icons
+          <kbd>⌘K</kbd>
+        </button>
+        <a class="icon-btn" href="https://github.com/shohanursourav/animaticons" target="_blank" rel="noopener" aria-label="GitHub repository" title="GitHub">
+          <span data-icon="code" data-size="19"></span>
+        </a>
+        <a class="btn btn-primary" href="gallery.html" style="padding:9px 18px;font-size:13.5px">Browse icons</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ================= HERO ================= -->
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="wrap">
+        <div class="hero-grid">
+          <div>
+            <p class="eyebrow">1,026 animated icons · free forever</p>
+            <h1>Give your interface a <span class="accent">pulse.</span></h1>
+            <p class="hero-sub">
+              Animaticons is a free, hand-crafted collection of animated icons built to make
+              buttons, menus and empty states feel alive. Hover to play, tune every detail,
+              then copy the code — it's yours.
+            </p>
+            <div class="hero-ctas">
+              <a class="btn btn-primary" href="gallery.html">
+                <span data-icon="layout-grid" data-size="18"></span>
+                Browse 1,026 icons
+              </a>
+              <a class="btn btn-ghost" href="docs.html">
+                <span data-icon="book-open" data-size="18"></span>
+                Read the guide
+              </a>
+            </div>
+            <div class="hero-note">
+              <span class="avatars">
+                <span data-icon="sparkles" data-size="30"></span>
+                <span data-icon="heart" data-size="30" data-pack="ember"></span>
+                <span data-icon="rocket" data-size="30" data-pack="ember"></span>
+              </span>
+              <span>Open source · MIT licensed · no sign-up, no fees</span>
+            </div>
+          </div>
+
+          <div class="hero-stage" aria-hidden="true">
+            <div class="float-chip c1"><span data-icon="bell" data-size="30"></span></div>
+            <div class="float-chip c2"><span data-icon="heart" data-size="30"></span></div>
+            <div class="float-chip c3"><span data-icon="camera" data-size="30"></span></div>
+            <div class="float-chip c4"><span data-icon="music" data-size="30"></span></div>
+            <div class="float-chip c5"><span data-icon="moon" data-size="30"></span></div>
+            <div class="hero-card">
+              <div class="hero-card-inner">
+                <span id="heroIcon"></span>
+                <div class="hero-card-label" id="heroLabel">sparkles</div>
+                <div class="hero-card-hint">hover the icon</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= QUICK FIND ================= -->
+    <section class="finder">
+      <div class="wrap">
+        <div class="finder-box">
+          <div class="finder-grid">
+            <div class="finder-copy">
+              <p class="eyebrow">Quick find</p>
+              <h2>Find the right one in a keystroke.</h2>
+              <p>
+                Search 1,026 icons by name, keyword or category. Every result already moves —
+                hover one and see for yourself.
+              </p>
+              <div class="fake-search" id="fakeSearch" role="button" tabindex="0" aria-label="Open icon search">
+                <span data-icon="search" data-size="20"></span>
+                <span class="typed" id="typedWord">heart</span><span class="type-caret"></span>
+              </div>
+              <div class="finder-meta">
+                <span><span data-icon="command" data-size="15"></span> Press <kbd>⌘K</kbd> anywhere</span>
+                <span><span data-icon="check-circle" data-size="15"></span> <span id="statCats">33 tidy categories</span></span>
+                <span><span data-icon="download" data-size="15"></span> Copy or download SVG</span>
+              </div>
+            </div>
+            <div class="finder-tiles" id="finderTiles"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PLAYGROUND ================= -->
+    <section class="playground" id="playground">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Playground</p>
+          <h2>Make it yours. Copy it. Ship it.</h2>
+          <p>Dial in size, speed and color, then copy the exact snippet — motion and all.</p>
+        </div>
+        <div class="pg-grid">
+          <div class="pg-stage">
+            <div class="pg-stage-top">
+              <div class="pg-name">
+                <span id="pgCat">Shapes &amp; Sparks</span>
+                <code id="pgId">sparkles</code>
+              </div>
+              <span class="tag" id="pgPackTag">Aura pack</span>
+            </div>
+            <div class="pg-stage-body anim-host" id="pgStage" data-hover-icon></div>
+            <div class="pg-picker" id="pgPicker"></div>
+          </div>
+
+          <div class="pg-panel">
+            <div class="pg-controls">
+              <div class="range-row">
+                <label for="pgSize">Size</label>
+                <input type="range" id="pgSize" min="24" max="240" step="2" value="128" />
+                <output id="pgSizeOut">128px</output>
+              </div>
+              <div class="range-row">
+                <label for="pgDur">Duration</label>
+                <input type="range" id="pgDur" min="0.3" max="3" step="0.1" value="1" />
+                <output id="pgDurOut">1.0×</output>
+              </div>
+              <div class="pg-swatches">
+                <span class="label">Color</span>
+                <div class="swatches" id="pgSwatches"></div>
+              </div>
+            </div>
+
+            <div class="code-tabs" role="tablist" aria-label="Code language">
+              <button class="is-active" data-lang="react" role="tab">React</button>
+              <button data-lang="vue" role="tab">Vue</button>
+              <button data-lang="html" role="tab">HTML</button>
+              <button data-lang="svg" role="tab">SVG</button>
+            </div>
+
+            <div class="code-block">
+              <div class="code-head">
+                <span id="pgCodeLabel">React</span>
+                <button class="copy-btn" data-copy="#code" type="button"><span data-icon="copy" data-size="14"></span> Copy</button>
+              </div>
+              <pre><code id="pgCode"></code></pre>
+            </div>
+
+            <div class="pg-actions">
+              <button class="btn btn-primary" id="pgCopy" type="button">
+                <span data-icon="copy" data-size="16"></span> Copy code
+              </button>
+              <button class="btn btn-ghost" id="pgReplay" type="button">
+                <span data-icon="refresh-cw" data-size="16"></span> Replay
+              </button>
+              <button class="btn btn-ghost" id="pgReset" type="button">
+                <span data-icon="undo" data-size="16"></span> Reset
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PACKS ================= -->
+    <section class="packs">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Two packs</p>
+          <h2>One motion system. Two personalities.</h2>
+          <p>Pick crisp lines or soft tinted fills — the animations are tuned to match.</p>
+        </div>
+        <div class="packs-grid">
+          <article class="pack-card aura">
+            <div class="pack-top">
+              <div class="pack-glyph"><span data-icon="sparkles" data-size="30"></span></div>
+              <div>
+                <h3>Aura</h3>
+                <div class="pack-count">513 icons · line style</div>
+              </div>
+            </div>
+            <p>Clean outlines with plenty of air. The workhorse pack for toolbars, dashboards and docs.</p>
+            <div class="pack-icons">
+              <span data-icon="heart" data-size="26"></span>
+              <span data-icon="cloud" data-size="26"></span>
+              <span data-icon="camera" data-size="26"></span>
+              <span data-icon="music" data-size="26"></span>
+              <span data-icon="rocket" data-size="26"></span>
+              <span data-icon="coffee" data-size="26"></span>
+            </div>
+            <a class="btn btn-dark" href="gallery.html?pack=aura">Browse Aura</a>
+          </article>
+
+          <article class="pack-card ember">
+            <div class="pack-top">
+              <div class="pack-glyph"><span class="pack-ember" data-icon="sparkles" data-size="30"></span></div>
+              <div>
+                <h3>Ember</h3>
+                <div class="pack-count">513 icons · tinted fills</div>
+              </div>
+            </div>
+            <p>The same gestures, warmed up with soft fills that glow on light and dark surfaces alike.</p>
+            <div class="pack-icons">
+              <span class="pack-ember" data-icon="heart" data-size="26"></span>
+              <span class="pack-ember" data-icon="cloud" data-size="26"></span>
+              <span class="pack-ember" data-icon="camera" data-size="26"></span>
+              <span class="pack-ember" data-icon="music" data-size="26"></span>
+              <span class="pack-ember" data-icon="rocket" data-size="26"></span>
+              <span class="pack-ember" data-icon="coffee" data-size="26"></span>
+            </div>
+            <a class="btn btn-dark" href="gallery.html?pack=ember">Browse Ember</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SHOWCASE ================= -->
+    <section class="showcase">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">In the wild</p>
+          <h2>Made for the UI you already build.</h2>
+          <p>Toolbars, product cards, players — little motions that make everyday screens feel polished.</p>
+        </div>
+        <div class="showcase-grid">
+          <div class="demo-card anim-host">
+            <h3>Toolbar</h3>
+            <div class="demo-surface">
+              <div class="demo-row">
+                <button class="demo-tool" type="button" aria-label="Pen"><span data-icon="pen" data-size="20"></span></button>
+                <button class="demo-tool" type="button" aria-label="Crop"><span data-icon="crop" data-size="20"></span></button>
+                <button class="demo-tool" type="button" aria-label="Shapes"><span data-icon="shapes" data-size="20"></span></button>
+                <button class="demo-tool" type="button" aria-label="Layers"><span data-icon="layers" data-size="20"></span></button>
+                <button class="demo-tool" type="button" aria-label="Eye"><span data-icon="eye" data-size="20"></span></button>
+              </div>
+              <div class="demo-row">
+                <button class="demo-tool" type="button" aria-label="Undo"><span data-icon="undo" data-size="20"></span></button>
+                <button class="demo-tool" type="button" aria-label="Redo"><span data-icon="redo" data-size="20"></span></button>
+                <button class="demo-tool" type="button" aria-label="Download"><span data-icon="download" data-size="20"></span></button>
+                <button class="demo-tool" type="button" aria-label="Settings"><span data-icon="settings" data-size="20"></span></button>
+              </div>
+              <p style="font-size:13px;color:var(--muted);margin:0">Hover the buttons — each one greets you.</p>
+            </div>
+          </div>
+
+          <div class="demo-card anim-host">
+            <h3>Product card</h3>
+            <div class="demo-surface">
+              <div class="demo-product">
+                <div class="ph"><span data-icon="headphones" data-size="30"></span></div>
+                <div>
+                  <h4>Drift Headphones</h4>
+                  <div class="price">$79</div>
+                </div>
+                <div class="mini-actions">
+                  <button class="demo-mini" id="likeBtn" type="button" aria-label="Like">
+                    <span data-icon="heart" data-size="17"></span>
+                  </button>
+                  <button class="demo-mini" type="button" aria-label="Add to cart">
+                    <span data-icon="cart-plus" data-size="17"></span>
+                  </button>
+                </div>
+              </div>
+              <div class="demo-product">
+                <div class="ph"><span class="pack-ember" data-icon="camera" data-size="30"></span></div>
+                <div>
+                  <h4>Peek Mini Cam</h4>
+                  <div class="price">$129</div>
+                </div>
+                <div class="mini-actions">
+                  <button class="demo-mini" type="button" aria-label="Add to cart">
+                    <span data-icon="cart-plus" data-size="17"></span>
+                  </button>
+                </div>
+              </div>
+              <p style="font-size:13px;color:var(--muted);margin:0">Try the heart — it beats back.</p>
+            </div>
+          </div>
+
+          <div class="demo-card anim-host">
+            <h3>Player</h3>
+            <div class="demo-surface" style="background:transparent;padding:0">
+              <div class="demo-player">
+                <div class="track">
+                  <div class="cover"></div>
+                  <div>
+                    <div class="t-name">Sunbeam Shuffle</div>
+                    <div class="t-sub">The Paper Lions</div>
+                  </div>
+                </div>
+                <div class="bar"><i></i></div>
+                <div class="ctrls">
+                  <button class="pbtn" type="button" aria-label="Previous"><span data-icon="skip-back" data-size="19"></span></button>
+                  <button class="pbtn big" id="playBtn" type="button" aria-label="Play">
+                    <span id="playIcon"></span>
+                  </button>
+                  <button class="pbtn" type="button" aria-label="Next"><span data-icon="skip-forward" data-size="19"></span></button>
+                  <button class="pbtn" type="button" aria-label="Volume"><span data-icon="volume" data-size="19"></span></button>
+                </div>
+              </div>
+              <p style="font-size:13px;color:var(--muted);margin:4px 0 0">Play, pause, skip — all in motion.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CTA ================= -->
+    <section class="cta-band">
+      <div class="wrap">
+        <div class="cta-inner">
+          <h2>Free for your next project.</h2>
+          <p>
+            No account, no watermark, no catch. Copy an icon or install the package —
+            Animaticons is MIT licensed and yours to remix.
+          </p>
+          <div class="cta-actions">
+            <a class="btn btn-primary" href="gallery.html">Start browsing</a>
+            <a class="btn btn-ghost" href="docs.html">View documentation</a>
+          </div>
+          <div class="cta-stats">
+            <div><b>1,026</b><span>animated icons</span></div>
+            <div><b>2</b><span>curated packs</span></div>
+            <div><b id="statCatCount">33</b><span>categories</span></div>
+            <div><b>∞</b><span>uses, no fees</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-blurb">
+          <a class="brand" href="index.html">
+            <span class="brand-mark"><span data-icon="sparkle" data-size="19"></span></span>
+            Animaticons
+          </a>
+          <p>1,026 animated icons with a little life in them. Built for designers and developers who care about the details.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <a href="gallery.html">Icon gallery</a>
+          <a href="gallery.html?pack=aura">Aura pack</a>
+          <a href="gallery.html?pack=ember">Ember pack</a>
+          <a href="gallery.html?cat=weather">Weather icons</a>
+        </div>
+        <div class="footer-col">
+          <h4>Learn</h4>
+          <a href="docs.html">Documentation</a>
+          <a href="docs.html#install">Installation</a>
+          <a href="docs.html#customize">Customize</a>
+          <a href="docs.html#accessibility">Accessibility</a>
+        </div>
+        <div class="footer-col">
+          <h4>Project</h4>
+          <a href="https://github.com/shohanursourav/animaticons" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://github.com/shohanursourav/animaticons/issues" target="_blank" rel="noopener">Request an icon</a>
+          <a href="docs.html#license">MIT License</a>
+          <a href="docs.html#faq">FAQ</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Animaticons. Crafted with care by <a href="http://shohanursourav.com" target="_blank" rel="noopener">Shohanur Sourav</a>.</span>
+        <span>MIT licensed · Free for personal &amp; commercial use</span>
+      </div>
+      <div class="footer-wordmark" aria-hidden="true">Animaticons</div>
+    </div>
+  </footer>
+
+  <script src="js/icons-data.js"></script>
+  <script src="js/runtime.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>

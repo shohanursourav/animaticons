@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Icon Gallery — Animaticons Animated Icons</title>
+  <meta name="description" content="Browse and search 1,026 free animated icons across the Aura and Ember packs. Hover to preview, copy as SVG, React, Vue or HTML." />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/gallery.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html" aria-label="Animaticons home">
+        <span class="brand-mark"><span data-icon="sparkle" data-size="19"></span></span>
+        Animaticons
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="gallery.html" class="is-active">Icons</a>
+        <a href="docs.html">Docs</a>
+      </nav>
+      <div class="header-actions">
+        <button class="search-trigger" data-open-palette type="button" aria-label="Search icons">
+          <span data-icon="search" data-size="16"></span>
+          Search icons
+          <kbd>⌘K</kbd>
+        </button>
+        <a class="icon-btn" href="https://github.com/shohanursourav/animaticons" target="_blank" rel="noopener" aria-label="GitHub repository" title="GitHub">
+          <span data-icon="code" data-size="19"></span>
+        </a>
+        <a class="btn btn-primary" href="docs.html" style="padding:9px 18px;font-size:13.5px">Get started</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="wrap">
+      <div class="gallery-shell">
+        <!-- sidebar -->
+        <div class="side-scrim" id="sideScrim"></div>
+        <aside class="gal-side" id="galSide" aria-label="Icon filters">
+          <div class="gal-side-head">
+            <h2>Icon packs</h2>
+            <div class="pack-switch" id="packSwitch"></div>
+          </div>
+          <div class="cat-scroll" id="catList"></div>
+        </aside>
+
+        <!-- main -->
+        <div class="gal-main">
+          <div class="gal-top">
+            <button class="side-toggle" id="sideToggle" type="button">
+              <span data-icon="filter" data-size="17"></span> Filters
+            </button>
+            <div class="gal-search">
+              <span data-icon="search" data-size="19"></span>
+              <input id="galSearch" type="text" placeholder="Search by name or keyword…  (heart, weather, arrow)" aria-label="Search icons" autocomplete="off" />
+              <kbd class="esc-key">Esc</kbd>
+            </div>
+            <div class="copy-as">
+              Copy as
+              <select id="copyAs" aria-label="Copy format">
+                <option value="svg">SVG</option>
+                <option value="react">React</option>
+                <option value="vue">Vue</option>
+                <option value="html">HTML</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="gal-banner">
+            <span class="tag">Heads up</span>
+            <span data-icon="sparkles" data-size="19"></span>
+            <span>Every icon plays on hover. Tap one to tune size, speed and color, or request a new icon on <a href="https://github.com/shohanursourav/animaticons/issues" target="_blank" rel="noopener">GitHub</a>.</span>
+          </div>
+
+          <div class="gal-meta">
+            <h1 id="galTitle">All icons</h1>
+            <span class="m-count" id="galCount"></span>
+          </div>
+
+          <div class="icon-grid anim-host" id="iconGrid"></div>
+
+          <div class="gal-empty" id="galEmpty">
+            <span data-icon="search-x" data-size="54"></span>
+            <h3>Nothing moved here.</h3>
+            <p id="emptyText">No icons match your search.</p>
+          </div>
+
+          <p class="gal-foot-note">
+            Missing something? <a href="https://github.com/shohanursourav/animaticons/issues" target="_blank" rel="noopener">Request an icon</a> — the collection grows every week.
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-blurb">
+          <a class="brand" href="index.html">
+            <span class="brand-mark"><span data-icon="sparkle" data-size="19"></span></span>
+            Animaticons
+          </a>
+          <p>1,026 animated icons with a little life in them. Built for designers and developers who care about the details.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <a href="gallery.html">Icon gallery</a>
+          <a href="gallery.html?pack=aura">Aura pack</a>
+          <a href="gallery.html?pack=ember">Ember pack</a>
+          <a href="gallery.html?cat=weather">Weather icons</a>
+        </div>
+        <div class="footer-col">
+          <h4>Learn</h4>
+          <a href="docs.html">Documentation</a>
+          <a href="docs.html#install">Installation</a>
+          <a href="docs.html#customize">Customize</a>
+          <a href="docs.html#accessibility">Accessibility</a>
+        </div>
+        <div class="footer-col">
+          <h4>Project</h4>
+          <a href="https://github.com/shohanursourav/animaticons" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://github.com/shohanursourav/animaticons/issues" target="_blank" rel="noopener">Request an icon</a>
+          <a href="docs.html#license">MIT License</a>
+          <a href="docs.html#faq">FAQ</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Animaticons. Crafted with care by <a href="http://shohanursourav.com" target="_blank" rel="noopener">Shohanur Sourav</a>.</span>
+        <span>MIT licensed · Free for personal &amp; commercial use</span>
+      </div>
+      <div class="footer-wordmark" aria-hidden="true">Animaticons</div>
+    </div>
+  </footer>
+
+  <script src="js/icons-data.js"></script>
+  <script src="js/runtime.js"></script>
+  <script src="js/gallery.js"></script>
+</body>
+</html>
