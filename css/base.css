@@ -3,16 +3,23 @@
    ============================================================ */
 
 @font-face {
-  font-family: "Fraunces";
-  src: url("../assets/fonts/fraunces.woff2") format("woff2");
+  font-family: "Geist";
+  src: url("../assets/fonts/geist-sans.woff2") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "Jakarta";
-  src: url("../assets/fonts/jakarta.woff2") format("woff2");
-  font-weight: 200 800;
+  font-family: "Geist";
+  src: url("../assets/fonts/geist-sans-italic.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Geist Mono";
+  src: url("../assets/fonts/geist-mono.woff2") format("woff2");
+  font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
@@ -39,8 +46,9 @@
   --code-bg: #2b1d12;
   --code-ink: #ffe9d2;
 
-  --font-display: "Fraunces", "Georgia", serif;
-  --font-text: "Jakarta", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "Geist", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-text: "Geist", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "Geist Mono", "SF Mono", "Cascadia Code", Consolas, monospace;
 
   --r-xs: 8px;
   --r-s: 12px;
@@ -76,7 +84,7 @@ input, textarea, select { font: inherit; color: inherit; }
 h1, h2, h3, h4 { margin: 0; font-family: var(--font-display); font-weight: 620; line-height: 1.12; letter-spacing: -0.015em; }
 p { margin: 0; }
 ul { margin: 0; padding: 0; list-style: none; }
-code, pre, kbd { font-family: "SF Mono", "Cascadia Code", "JetBrains Mono", Consolas, monospace; }
+code, pre, kbd { font-family: var(--font-mono); }
 
 ::selection { background: var(--primary-soft); }
 

@@ -44,7 +44,7 @@ Then open `http://localhost:4173`.
 ## Design
 
 - Main color: **light orange** (`#FFA24D` / `#F2892C`) on warm cream surfaces
-- Type: [Fraunces](https://fontsource.com/fonts/fraunces) (display) + [Plus Jakarta Sans](https://fontsource.com/fonts/plus-jakarta-sans) (text), bundled as woff2 in `assets/fonts/`
+- Type: [Geist](https://vercel.com/font) (sans — display, text & Geist Mono for code), bundled as woff2 in `assets/fonts/`
 - Every icon is original, procedurally assembled SVG on a 24×24 grid with round caps
 
 ## License
